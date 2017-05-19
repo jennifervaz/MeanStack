@@ -42,9 +42,9 @@ var init = function(){
   $scope.searchMovie = function(){
     $http.get('http://www.omdbapi.com/?t='+$scope.name+'&y='+$scope.year+'&plot=short&r=json').then(function (response) {
       $scope.movieData=response.data;
-      console.log(response.data);
-      
-  if(!$scope.movieData)
+      console.log($scope.movieData);
+
+  if(!$scope.movieData.Response)
   alert('ERROR : No movie found .');
 
 });
