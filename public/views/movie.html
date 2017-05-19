@@ -64,7 +64,7 @@ padding:10px;
         </tr>
         <tr>
       <td> <img ng-src="{{movieData.Poster}}" style="height=150px;width:120px"></td>
-      <td>  {{movieData.Title}}</td>
+      <td ng-model="checked">  {{movieData.Title}}</td>
       <td>  {{movieData.Year}}</td>
       <td>  {{movieData.Runtime}}</td>
       <td>  {{movieData.Genre}}</td>
@@ -78,7 +78,7 @@ padding:10px;
 </div>
 <div class="col-lg-12">
 <center>
-<button ng-click="addMovie()" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> ADD MOVIE</button></center>
+<button ng-click="addMovie()" class="btn btn-success btn-lg" ng-disabled="!checked"><span class="glyphicon glyphicon-plus"></span> ADD MOVIE</button></center>
 </div>
 </div>
 
