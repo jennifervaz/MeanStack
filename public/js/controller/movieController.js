@@ -2,6 +2,7 @@ module.exports = function($scope, $http,$rootScope,$location,$q,AuthService){
   $scope.movieData='';
 $scope.name='';
 $scope.year='';
+
 var init = function(){
     $http.get('/myapi/movie').then(function (response) {
       $scope.movieData1=response.data;
@@ -18,7 +19,7 @@ var init = function(){
       {
         $scope.data=response.data;
         console.log($scope.data);
-      
+
     if($scope.data.length>=1)
     {
       console.log('Delete movie section for if.');
@@ -41,9 +42,11 @@ var init = function(){
   $scope.searchMovie = function(){
     $http.get('http://www.omdbapi.com/?t='+$scope.name+'&y='+$scope.year+'&plot=short&r=json').then(function (response) {
       $scope.movieData=response.data;
-      console.log(response);
-  if(!$scope.movieData.Response)
+      console.log(response.data);
+      
+  if(!$scope.movieData)
   alert('ERROR : No movie found .');
+
 });
 init();
   };

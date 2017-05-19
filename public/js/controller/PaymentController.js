@@ -63,7 +63,7 @@ $scope.overallError = true;
   {
 
     $scope.overallError = $scope.phonenoError || $scope.cnoError || $scope.cvvError || $scope.emailidError;
-    console.log(overallError);
+    
   }
 
   $scope.phonenoError = false;

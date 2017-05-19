@@ -1,7 +1,7 @@
 module.exports = function($scope, $http){
 
     $(document).ready(function(){
-        $("#myDate").datepicker({ startDate: '+1d',format: 'dd/mm/yyyy',});
+        $("#myDate").datepicker({ minDate:'1d',format: 'dd/mm/yyyy',});
         $("#add").click(function () {
           var text=($("#hh").val())+" : "+($("#mm").val())+" "+($("#t").val());
       $('#res').append("<option value='"+text+"'>"+text+"</option>");
