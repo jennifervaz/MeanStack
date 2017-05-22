@@ -6,7 +6,16 @@ module.exports = function($scope, $http){
           var text=($("#hh").val())+" : "+($("#mm").val())+" "+($("#t").val());
       $('#res').append("<option value='"+text+"'>"+text+"</option>");
      });
+
+
     });
+
+    $("#remove").click(function () 
+    {
+
+        console.log("remove clicked");
+         $('#res option:selected').remove();
+     });
 
   var init = function(){
       $http.get('/myapi/movie').then(function (response) {

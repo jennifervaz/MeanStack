@@ -36,7 +36,10 @@ MovieMapping.find({Title:req.params.m},function(err, Data) {
     }
     res.send(Data);
 
+
   });
+ console.log(res);
+
 });
 
 router.delete('/deleteMapping/:id',function(req, res){

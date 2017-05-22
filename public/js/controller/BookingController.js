@@ -47,9 +47,11 @@ var data=sessionStorage.getItem('movieName');
   //var data=$rootScope.movieName;
   $http.get('/mapapi/selmoviename/'+data).then(function(response){
     $scope.booking=response.data;
+    console.log(response.data);
   });
   $http.get('/myapi/moviePoster/'+data).then(function(response){
    $rootScope.moviedata=response.data;
+   console.log(response.data);
    sessionStorage.setItem('moviedata',$rootScope.moviedata);
    });
 
@@ -58,7 +60,7 @@ bookingShow();
 
 $scope.movDates=[];
 var showDates=function() {
-for(i=0;i<6;i++)
+for(i=0;i<8;i++)
 {
   var date=new Date();
   date.setDate(date.getDate()+i);

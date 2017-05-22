@@ -13,19 +13,20 @@
 <div class="col-xs-6">
 <b>Select Date</b>
 <select ng-model="mapping.Date">
-  <option ng-repeat="x in movDates">{{x  | date:'dd, MMM yyyy'}}</option>
+  <option ng-repeat="x in movDates">{{x  | date:'MM/dd/yyyy'}}</option>
 </select>
 </DIV>
 </div>
 <div class="row">
-<div class="col-xs-12"><table style="height:100%;width:100%" class="table table-inverse">
+<div class="col-xs-12">
+<table style="height:100%;width:100%" class="table table-inverse">
   <tr>
     <!--<th>CITY</th>-->
     <th>THEATRE</th>
     <th>DATE</th>
     <th colspan="3" style="text-align:center">SHOWTIMINGS</th>
   </tr>
-  <tr ng-show="mapping.Date" ng-repeat="m in booking | filter : mapping.City | filter : mapping.Date">
+  <tr ng-show="mapping.Date" ng-repeat="m in booking | filter : mapping.City | filter: mapping.Date">
     <!--<td>{{m.City}}</td>-->
     <td>{{m.Theatre}}</td>
     <td>{{m.Date | date:'dd, MMM yyyy'}}</td>
